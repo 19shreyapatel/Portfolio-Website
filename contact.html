@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Shreya Patel</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html">Shreya Patel</a>
+      <nav class="nav">
+        <a href="about.html">About me</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Work</a>
+        <a href="ai-construction.html">AI in Construction</a>
+        <a href="contact.html" class="btn btn--ghost active">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="container">
+      <h1 class="section-title">Contact</h1>
+      <p>
+        I’m open to internships and full-time roles in preconstruction, project
+        engineering, and PMO. Feel free to email or connect on LinkedIn.
+      </p>
+
+      <form class="contact__form card" onsubmit="event.preventDefault(); alert('Thanks! I’ll get back to you.');">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="you@company.com" required />
+        </div>
+        <div class="field">
+          <label for="msg">Message</label>
+          <textarea id="msg" rows="4" placeholder="What would you like to build?"></textarea>
+        </div>
+        <button class="btn" type="submit">Send</button>
+      </form>
+
+      <div class="contact__meta" style="margin-top:10px">
+        <a class="chip" href="https://mail.google.com/mail/?view=cm&fs=1&to=spate345@asu.edu">spate345@asu.edu</a>
+        <a class="chip" href="https://www.linkedin.com/in/19shreyapatel/" target="_blank" rel="noopener">LinkedIn </a>
+        <a class="chip" href="#" target="_blank" rel="noopener">+1 (480) 876-7058 </a>
+        <span class="chip">Tempe, AZ</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year"></span> Shreya Patel</div>
+      <div class="footer__links">
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Work</a>
+        <a href="ai-construction.html">AI in Construction</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Shreya Patel</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html">Shreya Patel</a>
+      <nav class="nav">
+        <a href="about.html" class="active">About me</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Work</a>
+        <a href="ai-construction.html">AI in Construction</a>
+        <a href="contact.html" class="btn btn--ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="container">
+      <h1 class="section-title">About me</h1>
+      <div class="about__wrap">
+        <div class="about__text card">
+          <!-- Replace the text below with your refined bio -->
+          <p>
+            I’m a Construction Management professional with roots in Architecture.
+            I like transforming ambiguity into organized schedules, clear cost
+            models, and tidy closeout packages. I enjoy collaborating with
+            designers, trade partners, and field teams to keep work flowing.
+          </p>
+          <p>
+            Strengths: document control, estimating, preconstruction support,
+            safety-minded planning, and stakeholder coordination.
+          </p>
+        </div>
+        <aside class="about__card">
+          <h3>Software</h3>
+          <ul>
+            <li>Procore, Bluebeam, Primavera P6</li>
+            <li>Revit (BIM), AutoCAD, SketchUp</li>
+            <li>MS Office, InDesign, Photoshop</li>
+          </ul>
+          <h3 style="margin-top:14px">Location</h3>
+          <ul><li>Tempe, AZ</li></ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year"></span> Shreya Patel</div>
+      <div class="footer__links">
+        <a href="education.html">Education</a>
+        <a href="work.html">Work</a>
+        <a href="ai-construction.html">AI in Construction</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

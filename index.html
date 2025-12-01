@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shreya Patel — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html">Shreya Patel</a>
+      <nav class="nav">
+        <a href="about.html">About me</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Work</a>
+        <a href="ai-construction.html">AI in Construction</a>
+        <a href="contact.html" class="btn btn--ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">WELCOME</p>
+      <h1 class="hero__title">
+        Construction Management & Tech
+        <span class="hero__subtitle">Project Controls • Estimating • Safety • BIM</span>
+      </h1>
+      <p class="hero__lead">
+        I’m Shreya Patel, a Construction Management professional blending field-first
+        delivery with data-driven decisions. Explore my background, projects and
+        research interests in AI for the built environment.
+      </p>
+      <div class="hero__cta">
+        <a href="about.html" class="btn">About me</a>
+        <a href="education.html" class="btn btn--ghost">Education</a>
+        <a href="work.html" class="btn btn--ghost">Work</a>
+        <a href="ai-construction.html" class="btn btn--ghost">AI in Construction</a>
+        <a href="contact.html" class="btn">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-cards">
+    <div class="container">
+      <h2 class="section-title">Start here</h2>
+      <div class="cards-grid">
+        <a class="card card--link" href="about.html">
+          <div class="card__thumb gradient-1" aria-hidden="true"></div>
+          <h3>About me</h3>
+          <p>Who I am, what I value, and the kind of teams I thrive with.</p>
+        </a>
+        <a class="card card--link" href="work.html">
+          <div class="card__thumb gradient-2" aria-hidden="true"></div>
+          <h3>Work</h3>
+          <p>Preconstruction, project engineering, document control and delivery.</p>
+        </a>
+        <a class="card card--link" href="ai-construction.html">
+          <div class="card__thumb gradient-3" aria-hidden="true"></div>
+          <h3>AI in Construction</h3>
+          <p>Notes and ideas on practical, field-ready AI for the built world.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year"></span> Shreya Patel</div>
+      <div class="footer__links">
+        <a href="about.html">About</a>
+        <a href="education.html">Education</a>
+        <a href="work.html">Work</a>
+        <a href="ai-construction.html">AI in Construction</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

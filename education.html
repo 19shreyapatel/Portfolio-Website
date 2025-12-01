@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Education — Shreya Patel</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="index.html">Shreya Patel</a>
+      <nav class="nav">
+        <a href="about.html">About me</a>
+        <a href="education.html" class="active">Education</a>
+        <a href="work.html">Work</a>
+        <a href="ai-construction.html">AI in Construction</a>
+        <a href="contact.html" class="btn btn--ghost">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="container">
+      <h1 class="section-title">Education</h1>
+
+      <article class="edu card">
+        <h3>Arizona State University — MS, Construction Management & Technology</h3>
+        <p class="muted">Tempe, AZ • Graduation: May 2026</p>
+        <ul class="bullets">
+          <li>Coursework: preconstruction, project controls, safety, productivity.</li>
+          <li>Research: road-safety / human factors; data review and comparisons.</li>
+        </ul>
+      </article>
+
+      <article class="edu card">
+        <h3>Bachelor of Architecture — Sarvajanik University</h3>
+        <p class="muted">Surat, India • Graduation: 2023</p>
+        <ul class="bullets">
+          <li>Design studio experience; building systems and documentation.</li>
+          <li>Add awards, studios, or notable juries here.</li>
+        </ul>
+      </article>
+
+     </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>© <span id="year"></span> Shreya Patel</div>
+      <div class="footer__links">
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="ai-construction.html">AI in Construction</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

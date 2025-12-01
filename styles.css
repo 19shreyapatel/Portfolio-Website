@@ -1,0 +1,523 @@
+/* =========================================================
+   Shreya Patel — Portfolio Theme (One CSS for all pages)
+   Pages covered: index.html, about.html, education.html,
+                  work.html, ai-construction.html, contact.html
+   ========================================================= */
+
+/* ------------------
+   Design Tokens
+------------------ */
+:root{
+  /* Colors */
+  --bg: #2e372c;       /* deep olive background */
+  --bg-2:#111511;      /* darker footer/base */
+  --fg: #e9efe6;       /* primary text */
+  --muted:#b8c0b4;     /* secondary text */
+  --card:#1e241d;      /* card background */
+  --card-2:#222a22;    /* tile background */
+  --line:#3c463a;      /* borders/dividers */
+  --brand:#f0f7c1;     /* accents & buttons */
+  --accent:#d7efb0;    /* subtle accents */
+
+  /* Effects */
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+  --radius: 18px;
+
+  /* Typescale */
+  --fs-hero: clamp(30px, 5vw, 56px);
+  --fs-title: clamp(24px, 3.4vw, 36px);
+  --fs-body: 16px;
+}
+
+/* ------------------
+   Reset / Base
+------------------ */
+*{ box-sizing: border-box; }
+html, body{ height:100%; }
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  font-size: var(--fs-body);
+  color: var(--fg);
+  background: linear-gradient(180deg, var(--bg), var(--bg-2));
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img{ max-width:100%; height:auto; display:block; }
+a{ color: inherit; text-decoration: none; }
+.container{ width:min(1120px, 92%); margin-inline:auto; }
+.muted{ color: var(--muted); }
+
+/* Focus (keyboard) */
+a:focus, button:focus, input:focus, textarea:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* ------------------
+   Header & Nav
+------------------ */
+.topbar{
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(17,21,17,.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+}
+.brand{
+  font-weight: 800; letter-spacing: .5px;
+}
+.nav a{
+  margin-left:18px; padding:6px 0;
+  border-bottom: 2px solid transparent;
+  opacity:.9;
+}
+.nav a:hover{ opacity:1; }
+.nav a.active, .nav .active{ border-color: var(--brand); }
+
+/* Buttons */
+.btn{
+  display:inline-block;
+  background: var(--brand); color:#0b0f0a;
+  padding: 10px 16px; border-radius: 999px;
+  font-weight: 700; border: 0;
+}
+.btn--ghost{
+  background: transparent; color: var(--fg);
+  border: 1px solid var(--line);
+}
+.btn--ghost:hover{ border-color: var(--fg); }
+
+/* ------------------
+   Hero
+------------------ */
+.hero{ padding: 86px 0 64px; text-align:center; }
+.eyebrow{
+  font-size: .8rem; letter-spacing:.2em; text-transform:uppercase;
+  color: var(--muted); margin:0 0 12px;
+}
+.hero__title{
+  font-family: "Playfair Display", serif;
+  font-size: var(--fs-hero); line-height:1.15; margin:0 0 8px;
+}
+.hero__subtitle{
+  display:block; font-weight:600; color: var(--accent);
+  font-size: clamp(14px, 2.3vw, 18px); margin-top:6px;
+}
+.hero__lead{
+  max-width: 780px; margin: 18px auto 26px; color: var(--muted);
+}
+.hero__cta{
+  display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+}
+
+/* ------------------
+   Section Wrappers
+------------------ */
+.section-title{
+  font-family: "Playfair Display", serif;
+  font-size: var(--fs-title);
+  margin: 0 0 22px;
+}
+.quick-cards, .page{ padding: 64px 0; }
+.page .container{ display:block; }
+
+/* ------------------
+   Cards & Grids
+------------------ */
+.cards-grid{
+  display:grid; gap:18px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px 16px;
+  box-shadow: var(--shadow);
+}
+.card--link{ transition: transform .15s ease; }
+.card--link:hover{ transform: translateY(-3px); }
+.card__thumb{
+  height:132px; border-radius:12px; margin-bottom:12px; background:#283223;
+}
+
+/* background accents for thumbs */
+.gradient-1{ background: linear-gradient(135deg, #baffb3, #2f3e2b); }
+.gradient-2{ background: linear-gradient(135deg, #e3ffd2, #243422); }
+.gradient-3{ background: linear-gradient(135deg, #d2ffd5, #1f2c1c); }
+.gradient-soft{ background: linear-gradient(135deg, #b9f1c6, #324531); } /* optional */
+
+/* Small lists inside cards */
+.mini-list{ margin:10px 0 0; padding-left:16px; }
+.mini-list li{ margin:4px 0; }
+
+/* ------------------
+   About Page Layout
+------------------ */
+.about__wrap{
+  display:grid; gap:26px;
+  grid-template-columns: 2fr 1fr;
+  align-items:start;
+}
+.about__text{ background: var(--card); border:1px solid var(--line); border-radius: var(--radius); padding:18px; }
+.about__card{ background: var(--card); border:1px solid var(--line); border-radius: var(--radius); padding:18px; }
+.about__card ul{ margin:8px 0 0; padding-left:16px; }
+.about__card li{ margin:6px 0; }
+
+
+/* ------------------
+   Education Blocks
+------------------ */
+.edu{
+  margin-bottom:16px;
+}
+.edu h3{ margin: 0 0 6px; }
+.edu .muted{ margin: 0 0 8px; }
+
+/* ------------------
+   Work / Projects
+------------------ */
+.project-card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+}
+.project-tag{
+  display:inline-block;
+  background: var(--brand); color:#0b0f0a;
+  font-weight:700; font-size:.8rem;
+  padding:4px 10px; border-radius: 999px;
+  margin-bottom:10px;
+}
+.bullets{ padding-left:18px; margin: 8px 0 0; }
+.bullets li{ margin:6px 0; }
+
+/* ------------------
+   Tiles (used on AI in Construction if desired)
+------------------ */
+.tiles{
+  display:grid; gap:18px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.tile{
+  background: var(--card-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+/* Pills / Chips (links or buttons) */
+.chip{
+  display:inline-block; margin-top:8px; padding:6px 10px;
+  border-radius:999px; background:transparent; color:var(--fg);
+  border:1px solid var(--line); cursor:pointer; text-decoration:none;
+}
+.chip:hover{ border-color: var(--fg); }
+
+/* ------------------
+   Contact
+------------------ */
+.contact__form{
+  margin-top:14px; display:grid; gap:12px;
+}
+.field label{
+  display:block; font-weight:600; margin-bottom:6px;
+}
+input, textarea{
+  width:100%;
+  border: 1px solid var(--line);
+  background: #151a15;
+  color: var(--fg);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font: inherit;
+}
+input::placeholder, textarea::placeholder{ color:#7f8a7d; }
+.contact__meta{ margin-top:12px; display:flex; flex-wrap:wrap; gap:8px; }
+
+/* ------------------
+   Footer
+------------------ */
+.footer{
+  border-top: 1px solid var(--line);
+  padding: 18px 0 30px;
+  color: var(--muted);
+}
+.footer__inner{
+  display:flex; align-items:center; justify-content:space-between;
+}
+.footer__links a{
+  color: var(--muted);
+  margin-left:16px;
+}
+.footer__links a:hover{ color: var(--fg); }
+
+/* ------------------
+   Utilities
+------------------ */
+.card, .about__text, .about__card { /* ensure titles inside cards don't hug edges */
+  word-wrap: break-word;
+}
+.center { text-align:center; }
+.hidden { display:none !important; }
+
+/* ------------------
+   Responsive
+------------------ */
+@media (max-width: 820px){
+  .about__wrap{ grid-template-columns: 1fr; }
+  .hero{ padding-top: 66px; }
+  .footer__inner{ flex-direction: column; gap:10px; }
+  .nav a{ margin-left:14px; }
+}
+
+
+.see-more-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: var(--brand);
+  color: #1a1f18;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  transition: 0.25s ease;
+}
+
+.see-more-btn:hover {
+  background: #d6e89f;
+  transform: translateY(-3px);
+}
+
+.see-more-btn-dark {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: #1c231b;      /* darker color */
+  color: var(--fg);
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  transition: 0.25s ease;
+}
+
+.see-more-btn-dark:hover {
+  background: #2a3327;
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   UNIVERSAL BUTTON STYLE (See More, PDF links, Presentation,
+   Interactive Component, any button/link you want)
+   ========================================================= */
+
+.btn-yellow,
+.see-more-animated,
+.chip,
+.week-btn,
+.pdf-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #f5f096;             /* unified soft yellow */
+  color: #0d0f0c;                  /* dark text */
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #c4c073;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, background 0.3s ease;
+}
+
+/* Hover animation */
+.btn-yellow:hover,
+.see-more-animated:hover,
+.chip:hover,
+.week-btn:hover,
+.pdf-btn:hover {
+  background: #e1db72;
+  transform: translateY(-3px);
+}
+
+/* Click ripple + shrink */
+.btn-yellow:active,
+.see-more-animated:active,
+.chip:active,
+.week-btn:active,
+.pdf-btn:active {
+  transform: scale(0.92);
+}
+
+/* Ripple container */
+.btn-yellow::after,
+.see-more-animated::after,
+.chip::after,
+.week-btn::after,
+.pdf-btn::after {
+  content: "";
+  position: absolute;
+  width: 8px; height: 8px;
+  background: rgba(255,255,255,0.45);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(1);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* JS applies ripple position class */
+.ripple-effect::after {
+  opacity: 1;
+  transform: scale(34);
+}
+
+
+/* =========================================================
+   UNIVERSAL BUTTON STYLE (Normal, Clean, No Animations)
+   Applies to: See More, PDF, Presentation, Interactive
+   ========================================================= */
+
+.btn-unified,
+.see-more-animated,
+.week-btn,
+.pdf-btn,
+.chip {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #f2e689;       /* soft yellow */
+  color: #111;               /* dark text for readability */
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid #d2c96b;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  min-width: 150px;          /* ensures all buttons same width */
+  transition: background 0.2s ease;
+}
+
+.btn-unified:hover,
+.see-more-animated:hover,
+.week-btn:hover,
+.pdf-btn:hover,
+.chip:hover {
+  background: #e3d76c;       /* slightly darker yellow */
+}
+
+/* Remove box shrink/click animation */
+.btn-unified:active,
+.see-more-animated:active,
+.week-btn:active,
+.pdf-btn:active {
+  background: #d8cc63;
+}
+
+/* Make See More use unified button */
+.see-more-animated {
+  text-align: center;
+}
+
+/* =========================================================
+   WEEKLY PAGE CARD STYLES
+   ========================================================= */
+
+.week-card {
+  padding: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.week-card h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.week-card p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: var(--fg);
+}
+
+.week-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===== Unified buttons for See More, PDFs, Weekly actions ===== */
+
+.btn-unified,
+.see-more-animated,
+.week-btn,
+.pdf-btn,
+.chip {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #f2e689;       /* soft yellow */
+  color: #111;               /* dark text */
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  border: 1px solid #d2c96b;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  min-width: 150px;          /* consistent width */
+}
+
+.btn-unified:hover,
+.see-more-animated:hover,
+.week-btn:hover,
+.pdf-btn:hover,
+.chip:hover {
+  background: #e3d76c;
+}
+
+/* ===== Weekly page-specific styling ===== */
+
+.week-card {
+  padding: 18px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.week-card h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.week-card p {
+  margin: 4px 0;
+  font-size: 15px;
+  color: var(--fg);
+}
+
+.week-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
